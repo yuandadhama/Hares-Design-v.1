@@ -1,2 +1,2 @@
-# web
+# Hares Design
 SOURCE CODE FIRST PROJECT :)
