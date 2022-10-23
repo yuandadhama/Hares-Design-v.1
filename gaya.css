@@ -1,0 +1,636 @@
+* {
+     margin: 0;
+     padding: 0;
+     scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+     width: 2px;
+     transition: 1s;
+}
+::-webkit-scrollbar-thumb {
+     background: #1855d7;
+}
+::-webkit-scrollbar-track {
+     background-color: #fff;
+}
+body {
+     background-color: #0e45ba;
+}
+/* CONTAINER */
+.container {
+     display: flex;
+     position: fixed;
+     justify-content: space-between;
+     align-items: center;
+     font-family: Arial, Helvetica, sans-serif;
+     text-transform: capitalize;
+     width: 100%;
+     z-index: 1;
+     transition: .3s;
+     background: none;
+     padding: 20px 0;
+}
+.container > .logo {
+     margin-left: 5vw;
+     height: 40px;
+     width: calc(40px * 3);
+}
+.container > .list-nav {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     align-items: center;
+     background-color: #1855d7;
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 100vh;
+     transition: .3s;
+     width: 100vw;
+     font-size: 1.5em;
+     transform: translateX(100%);
+     opacity: 0;
+}
+.container > .list-nav > li {
+     width: 100%;
+     padding-top: calc(100vh / 15);
+     text-align: center;
+     border-top: 1px solid #fff;
+     list-style: none;
+}
+.container > .list-nav > li > a {
+     color: #fff;
+     text-decoration: none;
+     margin: 0 15px;
+     letter-spacing: 3px;
+     transition: .2s;
+}
+.container > .list-nav > li > a:hover {
+     border-top: 2px solid #fa4753;
+     border-bottom: 2px solid #fa4753;
+}
+.container > .list-nav > li > a:active {
+     color: #fa4753;
+}
+.container > .menu {
+     position: relative;
+     display: flex;
+     height: 20px;
+     flex-direction: column;
+     justify-content: space-between;
+     transition: .4s;
+}
+.container > .menu > input {
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     cursor: pointer;
+     opacity: 0;
+     z-index: 1;
+}
+.container > .menu > span {
+     transition: .3s;
+     margin-right: 10vw;
+     width: 30px;
+     height: 3px;
+     background-color: #fff;
+     border-radius: 8px;
+}
+.container > .menu > .satu {
+     transform-origin: 0 0;
+}
+.container > .menu > .tiga {
+     transform-origin: 0 100%;
+}
+.container > .menu > input:checked {
+     transform: translate(-5px, -5px );
+}
+.satu {
+     transform: rotate(45deg) translate(-2px, -1px);
+}
+.dua {
+     opacity: 0;
+}
+.tiga {
+     transform: rotate(-45deg) translate(-1px, 0);
+}
+/* KELAS TAMBAHAN UNTUK JS */
+.sticky {
+     padding: 5px 0;
+     border-radius: 0 0 100px 0px;
+     box-shadow: 
+     1px 1px 1px rgb(16, 16, 16, 30%);
+     background-color: #1855d7;
+     opacity: 90%;
+}
+.slide {
+     transform: translateX(0) !important;
+     opacity: 100% !important;
+}
+.hidden {
+     overflow-y: hidden;
+}
+.push-menu {
+     padding: 20px 0;
+}
+.opacity {
+     opacity: 100%;
+}
+/* KELAS TAMBAHAN UNTUK JS N */
+/* RESPONSIVE */
+@media screen and (min-width: 700px) {
+     .container > .logo {
+          height: 50px;
+          width: calc(50px * 3);
+     }
+     .container > .list-nav {
+          position: static;
+          height: 0;
+          flex-direction: row;
+          margin-right: 5vw;
+          border: none;
+          transform: none;
+          font-size: 1em;
+          width: auto;
+          opacity: 100%;
+     }   
+     .container > .list-nav > li > a {
+          display: inline;
+     }
+     .container > .menu {
+          display: none;
+     }
+     .container > .list-nav > li {
+          border: none;
+          padding: 0;
+     }
+     .sticky {
+          padding: 5px 0;
+     }
+}
+/* RESPONSIVE N */
+/* CONTAINER N  */
+
+
+/* SECTION SATU */
+.section-satu {
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     background: url('image/sect1.webp') right;
+     background-size: cover;
+     position: relative;
+}
+.section-satu > .salam {
+     font-size: 1.7em;
+     font-family: Arial, Helvetica, sans-serif;
+     color: #fff;
+     text-align: center;
+}
+#contain {
+     width: 100px;
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     margin: 0 0 10px 10px;
+}
+#contain > .circle {
+     width: 30px;
+     height: 30px;
+     background-color: #e91e63;
+     border-radius: 100%;
+     margin-bottom: 10px;
+}
+#contain > .circle::after {
+     content: 'Aa';
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color: #880e4f;
+     font-size: 2em;
+     margin-left: 120%;
+}
+#contain >.box {
+     width: 35px;
+     height: 30px;
+     background-color: #f44336;
+}
+#contain > .box::after {
+     content: '';
+     position: absolute;
+     margin-left: 40%;
+     width: 35px;
+     height: 30px;
+     background: #e0074b;
+     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+/* RESPONSIVE */
+@media screen and (min-width: 700px) {
+     .section-satu {
+          height: 100vh;
+     }
+     .section-satu > .salam {
+          font-size: 2em;
+     }
+     #contain > .circle {
+          width: 40px;
+          height: 40px;
+     }
+     #contain > .circle::after {
+          font-size: 2.5em;
+     }
+     #contain > .box, #contain > .box::after {
+          width: 45px;
+          height: 40px;
+     }
+     #contain > .box::after {
+          margin-left: 50%;
+     }
+}
+/* RESPONSIVE N */
+/* SECTION SATU N */
+
+
+
+/* SECTION DUA */
+.section-dua {
+     background: url('image/sect2.webp') left bottom;
+     background-size: cover;
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     text-align: center;
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: #505050;
+}
+.section-dua > .teks {
+     margin: 0 auto;
+}
+.section-dua > .teks > .tentang {
+     font-size: 1.5em;
+     margin-bottom: 20px;
+}
+.section-dua > .teks > .isi-tentang {
+     text-align: left;
+     font-size: 1em;
+     margin: 0 10px;
+     max-width: 250px;
+}
+/* RESPONSIVE */
+@media screen and (min-width: 250px) {
+     .section-dua > .teks > .isi-tentang {
+         text-align: justify;
+     }
+}
+@media screen and (min-width: 400px) {
+     .section-dua > .teks > .tentang {
+          font-size: 1.7em;
+     }
+     .section-dua > .teks > .isi-tentang {
+          max-width: 400px;    
+          font-size: 3vmax; 
+          margin: 0 30px;
+     }
+}
+@media screen and (min-width: 700px) {
+     .section-dua > .teks > .tentang {
+          font-size: 2em;
+     }
+     .section-dua > .teks > .isi-tentang {
+          text-align: center;
+          max-width: 700px;
+          font-size: 1.3em;
+          margin: 0 40px;
+     }
+}
+/* RESPONSIVE N */
+/* SECTION DUA N */
+
+
+
+/* MAIN */
+.main {
+     width: 100%;
+     height: inherit;
+     background-color: #0e45ba;
+     text-align: center;
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: #fff;
+     overflow-x: hidden;
+     position: relative;
+}
+.main > .desc {
+     z-index: 5;
+     width: 100%;
+     height: 100vh;
+     background-color: #0e45ba;
+     position: fixed;
+     top: -200vh;
+     transition: .5s ease-in-out;
+}
+.main > .desc > .close {
+     cursor: pointer;
+     font-family: Arial, Helvetica;
+     width: 30px;
+     height: 30px;
+     border-radius: 50px;
+     position: absolute;
+     top: 5vh;
+     right: 10vw;
+     font-size: 1.5em;
+     transition: .3s ease-in-out;
+}
+.main > .desc > .close:hover {
+     scale: 1.2;
+}
+.main > .desc > .bungkus {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     height: 100%;
+     margin: -20vh calc(40vw / 2) 0;
+     text-align: left;
+}
+.main > .desc > .bungkus > .text-atas {
+     width: 99%;
+     max-width: 300px;
+     margin-top: 30vh;
+     margin-bottom: 10px;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.main > .desc > .bungkus > .text-atas > .judul-atas {
+     text-align: left;
+}
+.main > .desc > .bungkus > .text-atas > .judul-atas > h2 {
+     line-height: 30px;
+     font-weight: 900;
+     font-size: 1.8em;
+}
+.main > .desc > .bungkus > .text-atas > .judul-atas > p {
+     font-size: 1.2em;
+}
+.main > .desc > .bungkus > img {
+     width: 100%;
+     height: auto;
+     max-width: 300px;
+     box-shadow: 1px 1px 10px black;
+}
+.main > .desc > .bungkus > .teks {
+     max-width: 300px;
+     width: 100%;
+     margin-bottom: 100vh;
+}
+
+.main > .desc > .bungkus > .teks > .judul {
+     display: none;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.main > .desc > .bungkus > .teks > p {
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     margin-top: 10px;
+     text-align: justify;
+}
+.main > .karya {
+     color: white;
+     margin-top: 65px;
+     letter-spacing: 1px;
+     font-size: 2.5em;
+}
+.main > .info {
+     width: 200px;
+     position: relative;
+     margin: 5px auto 35px;
+     text-align: center;
+     letter-spacing: 1px;
+     font-size: .8em;
+}
+.main > .info > p > u {
+     color: #ffeb3b;
+}
+.main > .contain {
+     display: grid;
+     grid-template: auto / 1fr;
+}
+.main > .contain > figure {
+     width: inherit;
+}
+.main > .contain > figure > .bungkus {
+     background-color: white;
+     margin: 0 auto;
+     width: 150px;
+     height: 150px;
+     padding: 30px;
+     display: flex;
+     align-items: center;
+}
+.main > .contain > figure > h2 {
+     font-size: 1em;     
+     margin: 5px 0 30px
+}
+.main > .contain > figure > .bungkus > img {
+     box-shadow: 2px 2px 10px black;
+     width: inherit;
+     height: auto;
+     cursor: pointer;
+     transition: .2s;
+}
+.main > .contain > figure > .bungkus > img:hover {
+     box-shadow: 4px 4px 20px #0a2358;
+}
+/* RESPONSIVE */
+@media screen and (min-width: 360px) {
+     .main > .contain > figure > .bungkus {
+          width: 200px;
+          height: 200px;
+     }
+     .main > .contain > figure > h2 {
+          font-size: 1.2em;
+     }
+     .main > .info {
+          width: 300px;
+     }
+}
+@media screen and (min-width: 460px) {
+     .main > .contain > figure > .bungkus {
+          width: 250px;
+          height: 250px;
+     }
+     .main > .contain > figure > h2 {
+          font-size: 1.4em;
+     }
+}
+@media screen and (min-width: 560px) {
+     .main > .contain > figure > .bungkus {
+          width: 300px;
+          height: 300px;
+     }
+}
+@media screen and (min-width: 700px) {
+     .main > .desc > .close {
+          width: 50px;
+          height: 50px;
+          top: 10vh;
+          right: 3vw;
+          font-size: 2em;
+     }
+     .main > .info {
+          width: 600px;
+     }
+     .main > .desc > .bungkus {
+          justify-content: center;
+          height: 350px;
+          width: 100%;
+          margin: calc(50vh / 2) 0px;
+          flex-direction: row;
+          text-align: left;
+     }
+     .main > .desc > .bungkus > img {
+          margin: 0;
+          height: 80%;
+          width: auto;
+          max-width: 400px;
+          margin-left: 20px;
+          margin-bottom: 60px;
+     }
+     .main > .desc > .bungkus > .text-atas {
+          display: none;
+     }
+     .main > .desc > .bungkus > .teks {
+          height: 100%;
+          margin: 0 20px 0 20px;
+          max-width: 350px;
+     }
+     .main > .desc > .bungkus > .teks > .judul {
+          display: block;
+     }
+     .main > .desc > .bungkus > .teks > .judul > h2 {
+          font-size: 2em;
+          line-height: 30px;
+     }
+     .main > .desc > .bungkus > .teks > .judul > p {
+          font-size: 1.5em;
+     }
+     .main > .desc > .bungkus > .teks > p {
+          font-size: 1em;
+     }
+     .main > .contain {
+          grid-template: auto / 1fr 1fr;
+          margin: 0 50px;
+     }
+     .main > .contain > figure > .bungkus {
+          width: 200px;
+          height: 200px;
+     }
+}
+@media screen and (min-width: 800px) {
+     .main > .desc > .close {
+          right: 8vw;
+     }
+}
+@media screen and (min-width: 960px) {
+     .main > .desc > .close {
+          right: 12vw;
+     }
+     .main > .karya {
+          font-size: 3em;
+     }
+     .main > .contain > figure > .bungkus {
+          width: 300px;
+          height: 300px;
+     }
+     .main > .info {
+          width: 100vw;
+          text-align: center;
+     }
+}
+/* KELAS UNTUK JS */
+.top {
+     top: 0 !important;
+}
+/* KELAS UNTUK JS N*/
+/* RESPONSIVE N */
+/* MAIN N */
+
+
+/* FOOTER */
+footer {
+     width: 100%;
+     height: 30vh;
+     background-color: #0a2358;
+     margin-top: 200px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+footer > .logo > .wrap {
+     display: inline-block;
+     margin: 0 2.5px;
+     border-radius: 10px;
+}
+footer > .logo > .wrap > .ig {
+     width: 30px;
+     height: 30px;
+     border: 2px solid white;
+     border-radius: 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     transition: all .3s;
+}
+footer > .logo > .wrap > .ig::before {
+     content: '';
+     width: 10px;
+     height: 10px;
+     border: 2px solid white;
+     border-radius: 50px;
+     position: absolute;
+}
+footer > .logo > .wrap > .ig::after {
+     content: '';
+     position: absolute;
+     top: 5px;
+     right: 5px;
+     width: 3px;
+     height: 3px;
+     background-color: white;
+     border-radius: 50px;
+}
+footer > .logo > .wrap > .fb {
+     position: relative;
+     display: inline-block;
+     width: 30px;
+     height: 30px;
+     border: 2px solid white;
+     border-radius: 10px;
+     text-align: center;
+     font-family: Arial, Helvetica, sans-serif;
+     font-style: normal;
+     overflow: hidden;
+     transition: all .3s;
+}
+footer > .logo > .wrap > .ig:hover {
+     background-color: crimson;
+}
+footer > .logo > .wrap > .fb:hover {
+     background-color: blue;
+}
+footer > .logo > .wrap > .fb > div {
+     position: absolute;
+     top: 2px;
+     left: 12px;
+     font-weight: 520;
+     font-size: 2.5em;
+     color: white;
+}
+footer > strong {
+     display: block;
+     letter-spacing: 1px;
+     color: white;
+     font-size: 1.5em;
+}
+/* FOOTER N */
