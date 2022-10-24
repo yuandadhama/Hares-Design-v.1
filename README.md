@@ -1,2 +1,2 @@
-# Hares Design
+# Project 1
 SOURCE CODE FIRST PROJECT :)
